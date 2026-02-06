@@ -19,7 +19,7 @@ export default function About() {
                 </div>
                 <div className="flex items-end gap-3 px-10 text-whitee text-2xl bg-blackk pt-5 pr-3">
 
-                    <h3 >Who am i ?</h3>
+                    <h3 >Just a journey?</h3>
                 </div>
                 <motion.div className="w1/2 hidden md:block  align-self-start"
                     initial={{ x: -300, opacity: 0 }}
@@ -34,7 +34,7 @@ export default function About() {
 
                 <motion.div
                     className="text-whitee p-5 text-sm md:text-lg mix-blend-luminosity min-w-72 leading-8   "
-                    initial={{ x: 300, opacity: 0 }}
+                    initial={{ x: -300, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     viewport={{ once: true }}

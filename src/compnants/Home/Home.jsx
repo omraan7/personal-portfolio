@@ -8,6 +8,8 @@ import block from "../../assets/Block.png";
 import work from "../../assets/Frame 24.png";
 import other from "../../assets/Frame 25.png";
 import tools from "../../assets/Frame 26.png";
+import cv from "../../assets/Mohamed Omran CV.pdf";
+
 import { motion } from "framer-motion";
 
 
@@ -87,7 +89,7 @@ export default function Home() {
                 Create responsive websites where technology meets creativity.
               </p>
               <div className="flex flex-col md:flex-row gap-3">
-                <Link className="p-2.5 mt-6 bg-primarytt border border-primarytt hover:bg-blackk rounded-lg text-whitee md:text-xl">Download CV</Link>
+                <a  href={cv} target="_blank" className="p-2.5 mt-6 bg-primarytt border border-primarytt hover:bg-blackk rounded-lg text-whitee md:text-xl">Download CV</a>
                 <Link onClick={() => window.open("https://omraan7.github.io/Omran/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=...", "_blank")} className="p-2.5 mt-6 bg-blackk border hover:bg-primarytt border-primarytt rounded-lg text-whitee md:text-xl">Social Media</Link>
               </div>
 
