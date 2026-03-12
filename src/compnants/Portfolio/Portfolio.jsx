@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import Clarity from '../../assets/Clarity.png'
 import Nutriplan from '../../assets/Nutriplan.png'
 import games from '../../assets/games.png'
+import socialapp from '../../assets/sapp.png'
+
 
 import portifolio from '../../assets/portifolio.png'
 import Space from '../../assets/Today in Space.png'
@@ -34,6 +36,13 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
+      name: "Social-App",
+      image: socialapp,
+      liveLink: "https://social-app-nine-rho.vercel.app/",
+      gitLink: "https://github.com/omraan7/social-app",
+    },
+    {
+      id: 2,
       name: "Nutriplan",
       image: Nutriplan,
       liveLink: "https://omraan7.github.io/Nutriplan/#/home",
@@ -41,7 +50,7 @@ export default function Portfolio() {
     },
 
     {
-      id: 2,
+      id: 3,
       name: "Games Live",
       image: games,
       liveLink: "https://omraan7.github.io/games-web/",
@@ -49,28 +58,28 @@ export default function Portfolio() {
     },
 
     {
-      id: 3,
+      id: 4,
       name: "Today in Space",
       image: Space,
       liveLink: "https://omraan7.github.io/Api-Project/#",
       gitLink: "https://github.com/omraan7/Api-Project/tree/main",
     },
     {
-      id: 4,
+      id: 5,
       name: "Clarity",
       image: Clarity,
       liveLink: "https://omraan7.github.io/-Clarity/",
       gitLink: "https://github.com/omraan7/-Clarity",
     },
     {
-      id: 5,
+      id: 6,
       name: "ux",
       image: ux,
       liveLink: "https://omraan7.github.io/UX-Review/",
       gitLink: "https://github.com/omraan7/UX-Review",
     },
     {
-      id: 6,
+      id: 7,
       name: "portfolio",
       image: portifolio,
       liveLink: "https://omraan7.github.io/Dom-project/",
