@@ -3,6 +3,8 @@ import Clarity from '../../assets/Clarity.png'
 import Nutriplan from '../../assets/Nutriplan.png'
 import games from '../../assets/games.png'
 import socialapp from '../../assets/sapp.png'
+import jj from '../../assets/jj.png'
+import ee from '../../assets/ee.png'
 
 
 import portifolio from '../../assets/portifolio.png'
@@ -34,15 +36,29 @@ export default function Portfolio() {
   };
 
   const projects = [
-    {
+     {
       id: 1,
+      name: "E-Commerce",
+      image: ee,
+      liveLink: "https://e-commerce-pied-psi-84.vercel.app",
+      gitLink: "https://github.com/omraan7/E-commerce",
+    },
+     {
+      id: 2,
+      name: "Movie App",
+      image: jj,
+      liveLink: "https://movie-app-lovat-two.vercel.app/",
+      gitLink: "https://github.com/omraan7/movie-app",
+    },
+    {
+      id: 3,
       name: "Social-App",
       image: socialapp,
       liveLink: "https://social-app-nine-rho.vercel.app/",
       gitLink: "https://github.com/omraan7/social-app",
     },
     {
-      id: 2,
+      id: 4,
       name: "Nutriplan",
       image: Nutriplan,
       liveLink: "https://omraan7.github.io/Nutriplan/#/home",
@@ -50,7 +66,7 @@ export default function Portfolio() {
     },
 
     {
-      id: 3,
+      id: 5,
       name: "Games Live",
       image: games,
       liveLink: "https://omraan7.github.io/games-web/",
@@ -58,28 +74,28 @@ export default function Portfolio() {
     },
 
     {
-      id: 4,
+      id: 6,
       name: "Today in Space",
       image: Space,
       liveLink: "https://omraan7.github.io/Api-Project/#",
       gitLink: "https://github.com/omraan7/Api-Project/tree/main",
     },
     {
-      id: 5,
+      id: 7,
       name: "Clarity",
       image: Clarity,
       liveLink: "https://omraan7.github.io/-Clarity/",
       gitLink: "https://github.com/omraan7/-Clarity",
     },
     {
-      id: 6,
+      id: 8,
       name: "ux",
       image: ux,
       liveLink: "https://omraan7.github.io/UX-Review/",
       gitLink: "https://github.com/omraan7/UX-Review",
     },
     {
-      id: 7,
+      id: 9,
       name: "portfolio",
       image: portifolio,
       liveLink: "https://omraan7.github.io/Dom-project/",
