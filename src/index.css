@@ -1,3 +1,138 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+ 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
+/* ─── THEME TOKENS ──────────────────────────────────────────── */
+:root {
+  /* Default: Gold Noir */
+  --accent:   255 210 100;
+  --accent2:  255 154  60;
+  --base:       6   6  10;
+  --surface:   18  18  26;
+  --surface2:  28  28  38;
+  --textpri:  255 255 255;
+  --textsec:  171 178 191;
+  --border:    60  60  80;
+}
+ 
+[data-theme="cyber"] {
+  --accent:     0 255 200;
+  --accent2:    0 180 255;
+  --base:        8   8  16;
+  --surface:    14  22  38;
+  --surface2:   20  30  50;
+  --textpri:   220 240 255;
+  --textsec:   120 160 200;
+  --border:     30  60  90;
+}
+ 
+[data-theme="rose"] {
+  --accent:   255 100 130;
+  --accent2:  220  60 180;
+  --base:      12   6  10;
+  --surface:   28  14  24;
+  --surface2:  40  20  36;
+  --textpri:  255 240 245;
+  --textsec:  200 150 170;
+  --border:    80  40  60;
+}
+ 
+[data-theme="emerald"] {
+  --accent:    80 255 150;
+  --accent2:   40 200 120;
+  --base:       6  12   8;
+  --surface:   14  24  18;
+  --surface2:  20  36  26;
+  --textpri:  230 255 240;
+  --textsec:  140 200 160;
+  --border:    40  80  56;
+}
+ 
+[data-theme="slate"] {
+  --accent:   180 200 255;
+  --accent2:  120 140 220;
+  --base:      10  12  18;
+  --surface:   18  22  32;
+  --surface2:  26  30  44;
+  --textpri:  220 225 245;
+  --textsec:  140 148 180;
+  --border:    50  56  80;
+}
+ 
+/* ─── BASE STYLES ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+ 
+html { scroll-behavior: smooth; overflow-x: hidden; }
+ 
+body {
+  background-color: rgb(var(--base));
+  color: rgb(var(--textpri));
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  transition: background-color 0.5s, color 0.5s;
+}
+ 
+::selection {
+  background: rgb(var(--accent) / 0.2);
+  color: rgb(var(--accent));
+}
+ 
+/* ─── SCROLLBAR ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: rgb(var(--base)); }
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--accent) / 0.4);
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--accent) / 0.7); }
+ 
+/* ─── GRID BACKGROUND ───────────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgb(var(--accent) / 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--accent) / 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+ 
+/* ─── GLOW EFFECTS ──────────────────────────────────────────── */
+.glow-accent {
+  box-shadow: 0 0 30px rgb(var(--accent) / 0.15), 0 0 80px rgb(var(--accent) / 0.05);
+}
+.glow-text {
+  text-shadow: 0 0 30px rgb(var(--accent) / 0.4);
+}
+ 
+/* ─── 3D CARD HOVER ─────────────────────────────────────────── */
+.card-3d {
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.card-3d:hover {
+  transform: perspective(1000px) rotateX(-4deg) rotateY(4deg) translateZ(12px);
+  box-shadow: 8px 16px 40px rgb(var(--accent) / 0.12), 0 0 0 1px rgb(var(--accent) / 0.1);
+}
+ 
+/* ─── THEME TRANSITION ──────────────────────────────────────── */
+*, *::before, *::after {
+  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+ 
+/* ─── NOISE OVERLAY ─────────────────────────────────────────── */
+.noise::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none; z-index: 1; opacity: 0.4;
+}
+ 
+/* ─── UTILITY OVERRIDES ─────────────────────────────────────── */
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
+.font-mono-custom { font-family: 'Space Mono', monospace; }
+ 
