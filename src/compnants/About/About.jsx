@@ -1,4 +1,4 @@
-import about from "../../assets/Group 50 (1).png";
+import about from "../../assets/about_photo.jpeg";
 import { motion } from "framer-motion";
 import { useRef } from "react";
  
@@ -38,31 +38,47 @@ function TiltImage() {
            style={{ background: "radial-gradient(circle, rgb(var(--accent)), transparent 70%)" }} />
  
       {/* Main frame */}
-      <div className="relative clip-hero p-3"
-           style={{ border: "1px solid rgb(var(--accent) / 0.15)", background: "rgb(var(--accent) / 0.02)" }}>
+      <div className="relative" style={{
+        clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))",
+        border: "1px solid rgb(var(--accent) / 0.18)",
+        background: "rgb(var(--accent) / 0.02)",
+        padding: "10px",
+      }}>
         {/* Corners */}
-        {[["top-0 left-0","border-t-2 border-l-2"],["top-0 right-0","border-t-2 border-r-2"],
-          ["bottom-0 left-0","border-b-2 border-l-2"],["bottom-0 right-0","border-b-2 border-r-2"]
-        ].map(([pos, bdr]) => (
-          <span key={pos} className={`absolute w-5 h-5 ${pos} ${bdr}`}
-                style={{ borderColor: "rgb(var(--accent))" }} />
+        {[
+          { s:{ top:-1, left:-1 },    bw:"2px 0 0 2px" },
+          { s:{ top:-1, right:-1 },   bw:"2px 2px 0 0" },
+          { s:{ bottom:-1, left:-1 }, bw:"0 0 2px 2px" },
+          { s:{ bottom:-1, right:-1 },bw:"0 2px 2px 0" },
+        ].map((c, i) => (
+          <span key={i} style={{
+            position:"absolute", width:22, height:22,
+            ...c.s, borderStyle:"solid", borderWidth:c.bw,
+            borderColor:"rgb(var(--accent))",
+          }} />
         ))}
-        <img src={about} alt="Mohamed Omran" className="block w-full max-w-sm"
-             style={{ filter: "brightness(0.9)" }} />
+ 
+        <img
+          src={about}
+          alt="Mohamed Omran"
+          style={{
+            display:"block", width:"100%", maxWidth:360,
+            objectFit:"cover", objectPosition:"top center",
+            boxShadow: "0 0 40px 8px rgb(var(--accent) / 0.35), 0 0 80px 20px rgb(var(--accent) / 0.15)",
+          }}
+        />
         <div className="absolute inset-0 pointer-events-none"
-             style={{ background: "linear-gradient(to bottom, transparent 60%, rgb(var(--base) / 0.5) 100%)" }} />
+             style={{ background: "linear-gradient(to bottom, transparent 65%, rgb(var(--base) / 0.55) 100%)" }} />
       </div>
  
       {/* Stat cards */}
-      <div className="absolute -top-4 -right-6 clip-btn px-4 py-2 backdrop-blur-xl z-10"
-           style={{ background: "rgb(var(--surface))", border: "1px solid rgb(var(--accent) / 0.18)" }}>
+      <div className="absolute z-10" style={{ top:-14, right:-20, clipPath:"polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))", padding:"8px 14px", backdropFilter:"blur(16px)", background:"rgb(var(--surface))", border:"1px solid rgb(var(--accent) / 0.2)" }}>
         <div className="font-display text-2xl text-gradient font-bold leading-none">9+</div>
         <div className="font-mono-custom text-[0.55rem] tracking-widest uppercase mt-0.5"
              style={{ color: "rgb(var(--textsec))" }}>Projects</div>
       </div>
  
-      <div className="absolute -bottom-4 -left-6 clip-btn px-4 py-2 backdrop-blur-xl z-10"
-           style={{ background: "rgb(var(--surface))", border: "1px solid rgb(var(--accent) / 0.18)" }}>
+      <div className="absolute z-10" style={{ bottom:-14, left:-20, clipPath:"polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))", padding:"8px 14px", backdropFilter:"blur(16px)", background:"rgb(var(--surface))", border:"1px solid rgb(var(--accent) / 0.2)" }}>
         <div className="font-display text-2xl text-gradient font-bold leading-none">2+</div>
         <div className="font-mono-custom text-[0.55rem] tracking-widest uppercase mt-0.5"
              style={{ color: "rgb(var(--textsec))" }}>Years</div>
@@ -160,3 +176,4 @@ export default function About() {
     </section>
   );
 }
+ 

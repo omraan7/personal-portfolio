@@ -1,4 +1,4 @@
-import home from "../../assets/Group 46.png";
+import home from "../../assets/hero_photo.jpeg";
 import cv from "../../assets/Mohamed Omran CV.pdf";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -63,10 +63,11 @@ function Particles() {
  
 /* ─── Skills Data ────────────────────────────────────────────── */
 const SKILLS = [
-  { num: "01", label: "Languages",  items: ["HTML", "CSS", "JavaScript", "TypeScript"] },
-  { num: "02", label: "Frameworks", items: ["React.js", "Next.js", "Tailwind", "Bootstrap"] },
-  { num: "03", label: "Tools",      items: ["Git", "GitHub", "Figma", "VS Code"] },
-  { num: "04", label: "Concepts",   items: ["REST APIs", "SSR", "Responsive", "CRUD"] },
+  { num: "01", label: "Markup",  items: ["HTML", "CSS", "sass"] },
+  { num: "02", label: "Languages",  items: ["php", "JavaScript", "TypeScript"] },
+  { num: "03", label: "Frameworks", items: ["React.js", "Next.js", "Tailwind", "Bootstrap","Node.js", "Express.js"] },
+  { num: "04", label: "Tools",      items: ["Git", "GitHub", "Figma", "VS Code"] },
+  { num: "05", label: "Concepts",   items: ["REST APIs", "SSR", "Responsive", "CRUD", "Authentication", "Authorization","state management"] },
 ];
  
 /* ─── 3D Image with mouse-tilt ──────────────────────────────── */
@@ -99,24 +100,46 @@ function HeroImage() {
            style={{ background: "radial-gradient(circle, rgb(var(--accent)), transparent 70%)", transform: "scale(1.2)" }} />
  
       {/* Frame */}
-      <div className="relative clip-hero p-4"
-           style={{ background: "rgb(var(--accent) / 0.03)", border: "1px solid rgb(var(--accent) / 0.15)" }}>
+      <div className="relative" style={{
+        clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))",
+        background: "rgb(var(--accent) / 0.03)",
+        border: "1px solid rgb(var(--accent) / 0.18)",
+        padding: "12px",
+      }}>
         {/* Corner brackets */}
-        {[["top-0 left-0","border-t-2 border-l-2"],["top-0 right-0","border-t-2 border-r-2"],
-          ["bottom-0 left-0","border-b-2 border-l-2"],["bottom-0 right-0","border-b-2 border-r-2"]
-        ].map(([pos, bdr]) => (
-          <span key={pos} className={`absolute w-5 h-5 ${pos} ${bdr}`}
-                style={{ borderColor: "rgb(var(--accent))" }} />
+        {[
+          { s: { top:-1, left:-1 },    bw:"2px 0 0 2px" },
+          { s: { top:-1, right:-1 },   bw:"2px 2px 0 0" },
+          { s: { bottom:-1, left:-1 }, bw:"0 0 2px 2px" },
+          { s: { bottom:-1, right:-1 },bw:"0 2px 2px 0" },
+        ].map((c, i) => (
+          <span key={i} style={{
+            position:"absolute", width:22, height:22,
+            ...c.s, borderStyle:"solid", borderWidth:c.bw,
+            borderColor:"rgb(var(--accent))",
+          }} />
         ))}
-        <img src={home} alt="Mohamed Omran Front-End Developer"
-             className="w-full block max-w-xs mx-auto" style={{ filter: "brightness(0.96)" }} />
+ 
+        {/* Photo */}
+        <img
+          src={home}
+          alt="Mohamed Omran Front-End Developer"
+          style={{
+            display:"block", width:"100%", maxWidth:300, margin:"0 auto",
+            objectFit:"cover", objectPosition:"top center",
+          }}
+        />
  
         {/* Floating badge */}
-        <div className="absolute -bottom-4 -right-4 clip-btn px-3 py-2 backdrop-blur-xl"
-             style={{ background: "rgb(var(--surface))", border: "1px solid rgb(var(--accent) / 0.2)" }}>
-          <div className="font-display text-xl text-gradient font-bold leading-none">9+</div>
-          <div className="font-mono-custom text-[0.55rem] tracking-widest uppercase mt-0.5"
-               style={{ color: "rgb(var(--textsec))" }}>Projects</div>
+        <div style={{
+          position:"absolute", bottom:-14, right:-14,
+          clipPath:"polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))",
+          padding:"8px 12px", backdropFilter:"blur(16px)",
+          background:"rgb(var(--surface))",
+          border:"1px solid rgb(var(--accent) / 0.22)",
+        }}>
+          <div className="font-display font-bold text-gradient" style={{ fontSize:20, lineHeight:1 }}>9+</div>
+          <div className="font-mono-custom uppercase" style={{ fontSize:"0.55rem", letterSpacing:"0.12em", marginTop:2, color:"rgb(var(--textsec))" }}>Projects</div>
         </div>
       </div>
     </motion.div>
@@ -294,4 +317,3 @@ export default function Home() {
     </>
   );
 }
- 
