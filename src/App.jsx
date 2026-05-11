@@ -10,6 +10,11 @@ const allrouter = createBrowserRouter([
     path: '/',
     element: <Layout />,
   },
+  {
+    path: '*',
+    element: <Layout />,
+  },
+  
 ])
 
 export default function App() {
