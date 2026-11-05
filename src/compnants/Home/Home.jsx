@@ -1,5 +1,5 @@
 import home from "../../assets/hero_photo.jpeg";
-import cv from "../../assets/Mohamed Omran CV.pdf";
+import cv from "../../assets/Mohamed Omran – Full-Stack Developer CV.pdf";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
  
@@ -123,7 +123,7 @@ function HeroImage() {
         {/* Photo */}
         <img
           src={home}
-          alt="Mohamed Omran Front-End Developer"
+          alt="Mohamed Omran Full-Stack Developer"
           style={{
             display:"block", width:"100%", maxWidth:300, margin:"0 auto",
             objectFit:"cover", objectPosition:"top center",
@@ -196,7 +196,7 @@ export default function Home() {
  
             <p className="font-display italic mb-6 text-gradient"
                style={{ fontSize: "clamp(1.4rem,3.5vw,2.6rem)", lineHeight: 1.1 }}>
-              Front-End Developer
+              Full-Stack Developer
             </p>
  
             <p className="mb-10 font-body font-light leading-relaxed max-w-sm"
