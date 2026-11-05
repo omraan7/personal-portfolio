@@ -4,6 +4,22 @@ import { createContext, useContext, useEffect, useState } from "react";
 // The CSS vars are set on :root by applyTheme()
 export const THEMES = [
   {
+    id: "space",
+    label: "Deep Space",
+    accent:  "#78BEFF",
+    accent2: "#9B6BFF",
+    vars: {
+      "--accent":   "120 190 255",
+      "--accent2":  "155 107 255",
+      "--base":     "3   4  10",
+      "--surface":  "10  14  28",
+      "--surface2": "18  24  44",
+      "--textpri":  "235 240 255",
+      "--textsec":  "160 172 200",
+      "--border":   "50  64  110",
+    },
+  },
+  {
     id: "gold",
     label: "Gold Noir",
     accent:  "#FFD264",
@@ -96,7 +112,7 @@ const ThemeCtx = createContext(null);
  
 export function ThemeProvider({ children }) {
   const [theme, setThemeState] = useState(() => {
-    return localStorage.getItem("portfolio-theme") || "gold";
+    return localStorage.getItem("portfolio-theme") || "space";
   });
  
   const setTheme = (id) => {

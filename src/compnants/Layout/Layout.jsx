@@ -101,7 +101,7 @@ function Footer({ scrollToSection }) {
   );
 }
  
-function LayoutInner() {
+export function LayoutInner() {
   const homeRef      = useRef(null);
   const aboutRef     = useRef(null);
   const portfolioRef = useRef(null);

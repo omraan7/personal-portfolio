@@ -3,16 +3,16 @@ import './App.css'
 import './index.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import Layout from './compnants/Layout/Layout.jsx'
+import Universe from './ui/Universe.jsx'
 
 const allrouter = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: <Universe />,
   },
   {
     path: '*',
-    element: <Layout />,
+    element: <Universe />,
   },
   
 ])
