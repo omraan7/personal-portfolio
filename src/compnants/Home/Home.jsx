@@ -1,8 +1,8 @@
-
 import home from "../../assets/hero_photo.jpeg";
+import cv from "../../assets/Mohamed Omran CV.pdf";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-
+ 
 /* ─── Particle Canvas ────────────────────────────────────────── */
 function Particles() {
   const ref = useRef(null);
@@ -14,7 +14,7 @@ function Particles() {
     const resize = () => { c.width = c.offsetWidth; c.height = c.offsetHeight; };
     resize();
     window.addEventListener("resize", resize);
-
+ 
     const pts = Array.from({ length: 55 }, () => ({
       x: Math.random() * c.width,
       y: Math.random() * c.height,
@@ -23,12 +23,12 @@ function Particles() {
       dy: (Math.random() - 0.5) * 0.28,
       a: Math.random() * 0.45 + 0.08,
     }));
-
+ 
     const getAccent = () => {
       const s = getComputedStyle(document.documentElement);
       return s.getPropertyValue("--accent").trim() || "255 210 100";
     };
-
+ 
     const draw = () => {
       ctx.clearRect(0, 0, c.width, c.height);
       const col = getAccent();
@@ -60,7 +60,7 @@ function Particles() {
   }, []);
   return <canvas ref={ref} className="absolute inset-0 w-full h-full pointer-events-none" />;
 }
-
+ 
 /* ─── Skills Data ────────────────────────────────────────────── */
 const SKILLS = [
   { num: "01", label: "Markup",  items: ["HTML", "CSS", "sass"] },
@@ -69,7 +69,7 @@ const SKILLS = [
   { num: "04", label: "Tools",      items: ["Git", "GitHub", "Figma", "VS Code"] },
   { num: "05", label: "Concepts",   items: ["REST APIs", "SSR", "Responsive", "CRUD", "Authentication", "Authorization","state management"] },
 ];
-
+ 
 /* ─── 3D Image with mouse-tilt ──────────────────────────────── */
 function HeroImage() {
   const ref = useRef(null);
@@ -98,7 +98,7 @@ function HeroImage() {
       {/* Glow */}
       <div className="absolute inset-0 rounded-full blur-3xl opacity-20 pointer-events-none"
            style={{ background: "radial-gradient(circle, rgb(var(--accent)), transparent 70%)", transform: "scale(1.2)" }} />
-
+ 
       {/* Frame */}
       <div className="relative" style={{
         clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))",
@@ -119,17 +119,17 @@ function HeroImage() {
             borderColor:"rgb(var(--accent))",
           }} />
         ))}
-
+ 
         {/* Photo */}
         <img
           src={home}
-          alt="Mohamed Omran Full-Stack Developer"
+          alt="Mohamed Omran Front-End Developer"
           style={{
             display:"block", width:"100%", maxWidth:300, margin:"0 auto",
             objectFit:"cover", objectPosition:"top center",
           }}
         />
-
+ 
         {/* Floating badge */}
         <div style={{
           position:"absolute", bottom:-14, right:-14,
@@ -145,7 +145,7 @@ function HeroImage() {
     </motion.div>
   );
 }
-
+ 
 export default function Home() {
   return (
     <>
@@ -154,9 +154,9 @@ export default function Home() {
                style={{ background: `radial-gradient(ellipse 80% 60% at 60% 40%, rgb(var(--accent) / 0.06) 0%, transparent 70%), rgb(var(--base))` }}>
         <Particles />
         <div className="grid-bg absolute inset-0 pointer-events-none" />
-
+ 
         <div className="relative z-10 max-w-7xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-[48px_1fr_1fr] gap-8 items-center py-24 md:py-0 md:min-h-screen">
-
+ 
           {/* Social sidebar */}
           <div className="hidden md:flex flex-col items-center gap-4">
             <div className="w-px h-16 opacity-20" style={{ background: "rgb(var(--accent))" }} />
@@ -174,7 +174,7 @@ export default function Home() {
             ))}
             <div className="w-px h-16 opacity-20" style={{ background: "rgb(var(--accent))" }} />
           </div>
-
+ 
           {/* Text content */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -188,28 +188,24 @@ export default function Home() {
               </span>
               <div className="h-px w-10" style={{ background: "rgb(var(--accent))" }} />
             </div>
-
+ 
             <h1 className="font-display font-bold leading-[0.95] mb-3"
                 style={{ fontSize: "clamp(2.8rem,7vw,5.5rem)", color: "rgb(var(--textpri))", letterSpacing: "-0.02em" }}>
               Mohamed<br />Omran
             </h1>
-
+ 
             <p className="font-display italic mb-6 text-gradient"
                style={{ fontSize: "clamp(1.4rem,3.5vw,2.6rem)", lineHeight: 1.1 }}>
-              Full-Stack Developer
+              Front-End Developer
             </p>
-
+ 
             <p className="mb-10 font-body font-light leading-relaxed max-w-sm"
                style={{ color: "rgb(var(--textsec))", fontSize: "0.95rem" }}>
               Crafting responsive, performant web experiences where modern technology meets thoughtful design.
             </p>
-
+ 
             <div className="flex flex-wrap gap-3">
-              <a
-                 href="/Mohamed-Omran-CV.pdf"
-                 target="_blank"
-                 rel="noreferrer"
-                 download="Mohamed-Omran-CV.pdf"
+              <a href={cv} target="_blank"
                  className="clip-btn inline-flex items-center gap-2 px-6 py-3 font-mono-custom text-[0.72rem] tracking-widest uppercase font-bold transition-opacity duration-200 hover:opacity-80"
                  style={{ background: "linear-gradient(135deg, rgb(var(--accent)), rgb(var(--accent2)))", color: "rgb(var(--base))" }}>
                 Download CV
@@ -223,13 +219,13 @@ export default function Home() {
               </a>
             </div>
           </motion.div>
-
+ 
           {/* 3D Hero Image */}
           <div className="flex justify-center md:justify-end">
             <HeroImage />
           </div>
         </div>
-
+ 
         {/* Scroll hint */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <div className="w-px h-10 animate-scroll-pulse origin-top"
@@ -238,7 +234,7 @@ export default function Home() {
                 style={{ color: "rgb(var(--textsec))" }}>Scroll</span>
         </div>
       </section>
-
+ 
       {/* ── SKILLS ───────────────────────────────────────────── */}
       <section id="skills" className="relative py-24 px-6 overflow-hidden"
                style={{ background: "rgb(var(--base))" }}>
@@ -247,7 +243,7 @@ export default function Home() {
              style={{ fontSize: "14rem", color: "rgb(var(--textpri) / 0.015)", lineHeight: 1 }}>
           SKILLS
         </div>
-
+ 
         <div className="max-w-7xl mx-auto relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -267,7 +263,7 @@ export default function Home() {
               Skills &amp; <span style={{ color: "rgb(var(--textsec) / 0.4)", fontStyle: "italic" }}>Tools</span>
             </h2>
           </motion.div>
-
+ 
           {/* Skills grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
                style={{ background: "rgb(var(--accent) / 0.06)", border: "1px solid rgb(var(--accent) / 0.06)" }}>
@@ -287,7 +283,7 @@ export default function Home() {
                 {/* Hover bg */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                      style={{ background: "rgb(var(--accent) / 0.02)" }} />
-
+ 
                 <div className="relative z-10">
                   <div className="font-mono-custom text-[0.6rem] tracking-widest mb-4"
                        style={{ color: "rgb(var(--accent) / 0.45)" }}>
