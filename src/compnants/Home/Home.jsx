@@ -1,5 +1,5 @@
 import home from "../../assets/hero_photo.jpeg";
-import cv from "../../assets/Mohamed Omran – Full-Stack Developer CV.pdf";
+import cv from "../../assets/Mohamed Omran CV.pdf";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
  
