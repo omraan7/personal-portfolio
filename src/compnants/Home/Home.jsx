@@ -65,8 +65,8 @@ function Particles() {
 const SKILLS = [
   { num: "01", label: "Markup",  items: ["HTML", "CSS", "sass"] },
   { num: "02", label: "Languages",  items: ["php", "JavaScript", "TypeScript"] },
-  { num: "03", label: "Frameworks", items: ["React.js", "Next.js", "Tailwind", "Bootstrap","Node.js", "Express.js"] },
-  { num: "04", label: "Tools",      items: ["Git", "GitHub", "Figma", "VS Code"] },
+  { num: "03", label: "Frameworks", items: ["React.js", "Next.js", "Tailwind", "Bootstrap","Node.js", "Express.js","Nest.js","MongoDB", "PostgreSQL"] },
+  { num: "04", label: "Tools",      items: ["Git", "GitHub", "Figma", "VS Code","POSTMAN"] },
   { num: "05", label: "Concepts",   items: ["REST APIs", "SSR", "Responsive", "CRUD", "Authentication", "Authorization","state management"] },
 ];
  
@@ -123,7 +123,7 @@ function HeroImage() {
         {/* Photo */}
         <img
           src={home}
-          alt="Mohamed Omran Front-End Developer"
+          alt="Mohamed Omran full-stack Developer"
           style={{
             display:"block", width:"100%", maxWidth:300, margin:"0 auto",
             objectFit:"cover", objectPosition:"top center",
@@ -196,7 +196,7 @@ export default function Home() {
  
             <p className="font-display italic mb-6 text-gradient"
                style={{ fontSize: "clamp(1.4rem,3.5vw,2.6rem)", lineHeight: 1.1 }}>
-              Front-End Developer
+              full-stack Developer
             </p>
  
             <p className="mb-10 font-body font-light leading-relaxed max-w-sm"

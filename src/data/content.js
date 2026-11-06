@@ -18,10 +18,10 @@ import ux from "../assets/optimized/ux.webp";
 
 export const PROFILE = {
   name: "Mohamed Omran",
-  title: "Front-End Developer",
+  title: "full-stack Developer",
   intro: "Crafting responsive, performant web experiences where modern technology meets thoughtful design.",
   objective:
-    "Front-End Developer seeking to join a professional team where I can contribute to building modern, high-quality web applications using React.js and Next.js, while continuously improving my skills and delivering impactful, user-focused solutions.",
+    "full-stack Developer seeking to join a professional team where I can contribute to building modern, high-quality web applications using React.js and Next.js, while continuously improving my skills and delivering impactful, user-focused solutions.",
   story:
     "From my first line of HTML to building full-scale React applications with server-side rendering in Next.js — every step has been driven by genuine curiosity and the thrill of bringing ideas to life on screen. I obsess over clean architecture, responsive design, and the kind of subtle details users feel but never notice.",
   traits: [
@@ -51,8 +51,8 @@ export const EMAIL = "Mohammedommran2000@gmail.com";
 export const SKILLS = [
   { id: "markup", label: "Markup", items: ["HTML", "CSS", "Sass"] },
   { id: "languages", label: "Languages", items: ["PHP", "JavaScript", "TypeScript"] },
-  { id: "frameworks", label: "Frameworks", items: ["React.js", "Next.js", "Tailwind", "Bootstrap", "Node.js", "Express.js"] },
-  { id: "tools", label: "Tools", items: ["Git", "GitHub", "Figma", "VS Code"] },
+  { id: "frameworks", label: "Frameworks", items: ["React.js", "Next.js", "Tailwind", "Bootstrap", "Node.js", "Express.js", "Nest.js", "MongoDB", "PostgreSQL"] },
+  { id: "tools", label: "Tools", items: ["Git", "GitHub", "Figma", "VS Code","POSTMAN"] },
   { id: "concepts", label: "Concepts", items: ["REST APIs", "SSR", "Responsive", "CRUD", "Authentication", "Authorization", "State management"] },
 ];
 
@@ -90,6 +90,7 @@ export const PROJECTS = [
   { id: "clarity", name: "Clarity", tag: "HTML · CSS", image: Clarity, live: "https://omraan7.github.io/-Clarity/", git: "https://github.com/omraan7/-Clarity" },
   { id: "ux-review", name: "UX Review", tag: "UI/UX · Design", image: ux, live: "https://omraan7.github.io/UX-Review/", git: "https://github.com/omraan7/UX-Review" },
   { id: "portfolio-dom", name: "Portfolio", tag: "Vanilla JS", image: portifolio, live: "https://omraan7.github.io/Dom-project/", git: "https://github.com/omraan7/Dom-project" },
+  
 ];
 
 /** From the CV. Training programs carry no dates in the CV, so none are shown. */
